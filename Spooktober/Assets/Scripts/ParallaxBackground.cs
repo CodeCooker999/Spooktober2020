@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class ParallaxBackground : MonoBehaviour
 {
@@ -20,6 +20,8 @@ Sprite sprite = GetComponent<SpriteRenderer>().sprite;
 Texture2D texture = sprite.texture;
 textureUnitSizeX = texture.width / sprite.pixelsPerUnit;
 textureUnitSizeY = texture.height / sprite.pixelsPerUnit;
+
+print("Hello Me Lets Get Started");
 }
 
 void FixedUpdate()
