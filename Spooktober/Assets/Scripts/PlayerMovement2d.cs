@@ -12,7 +12,7 @@ public class PlayerMovement2d : MonoBehaviour
 
     private float horizontal;
     private float vertical;
-    private float jump;
+    private float jump = 5f;
 
     void Start()
     {
@@ -22,22 +22,32 @@ public class PlayerMovement2d : MonoBehaviour
 
     void Update()
     {
+        GetInput();
 
+        if (Input.GetButtonDown("Jump"))
+        {
+            Jump();
+        }
+
+        
     }
 
     public void GetInput()
     {
         horizontal = Input.GetAxis("Horizontal");
-        jump = Input.GetAxis("Jump");
 
-        move = new Vector2(horizontal, 0);
+        move = new Vector3(horizontal, 0f, 0f);
 
     }
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + move * speed * Time.fixedDeltaTime);
-        rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        rb.position += move * Time.deltaTime * speed;
+    }
+
+    public void Jump()
+    {
+        rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
     }
         
 }
