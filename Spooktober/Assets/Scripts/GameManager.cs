@@ -1,19 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GmaeManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    
-    void Start()
+
+    public LevelLoader levelLoader;
+
+    public void Play()
     {
-        
+        SceneManager.LoadScene("LevelSelection");
+        Debug.Log("Play");
     }
 
-    
-    void Update()
+    public void Credit()
     {
-        
+        SceneManager.LoadScene("Credits");
+        Debug.Log("Credits");
+    }
+
+    public void Quit()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
     }
 
     public void Resume()
@@ -23,7 +31,7 @@ public class GmaeManager : MonoBehaviour
 
     public void Leave()
     {
-        Debug.Log("Leave");
+        SceneManager.LoadScene("Main");
     }
 
     public void Hurt()
@@ -34,6 +42,36 @@ public class GmaeManager : MonoBehaviour
     public void Die()
     {
         Debug.Log("DEd");
+    }
+
+    public void Level1()
+    {
+        levelLoader.LoadLevel(3);
+    }
+
+    public void Level2()
+    {
+
+    }
+
+    public void Level3()
+    {
+
+    }
+
+    public void Level4()
+    {
+
+    }
+
+    public void Level5()
+    {
+
+    }
+
+    public void Level6()
+    {
+
     }
 
 }
