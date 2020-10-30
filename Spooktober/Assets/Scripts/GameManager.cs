@@ -22,26 +22,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Quit");
         Application.Quit();
-    }
-
-    public void Resume()
-    {
-        Debug.Log("Resume");
-    }
-
-    public void Leave()
-    {
-        SceneManager.LoadScene("Main");
-    }
-
-    public void Hurt()
-    {
-        Debug.Log("Ouch");
-    }
-
-    public void Die()
-    {
-        Debug.Log("DEd");
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 
     public void Level1()
